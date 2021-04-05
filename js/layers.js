@@ -25,7 +25,7 @@ addLayer("green", {
           return "Generate 1 Green Mana"
         },
         onClick() {
-          player.green.points = player.green.points.add(1)
+          player.green.baseAmount = player.green.baseAmount.add(1)
         }
       }
     },
