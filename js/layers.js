@@ -36,7 +36,7 @@ addLayer("green", {
         title: "Llanowar Elves",
         type: "Elf",
         description: "Generate 1 Green Mana per second",
-        cost() {return player.green.points = 1},
+        cost() {return new Decimal(1)},
         unlocked() {return player.green.unlocked},
         effect() {
           eff = new Decimal(1)
