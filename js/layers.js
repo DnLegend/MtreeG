@@ -27,6 +27,7 @@ addLayer("green", {
         onClick() {
           player.green.baseAmount = player.green.baseAmount.add(1)
           player.points = player.points.add(1)
+          return player.green.baseAmount
         }
       }
     },
