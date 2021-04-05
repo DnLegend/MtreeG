@@ -52,8 +52,6 @@ addLayer("green", {
         description: "Double the effect of all Elves",
         cost() {return new Decimal(100)},
         unlocked() {return hasUpgrade("green", 12)},
-        effect() {
-        }
       }
     },
     gainMult() { // Calculate the multiplier for main currency from bonuses
