@@ -10,7 +10,7 @@ addLayer("green", {
     requires: new Decimal(10), // Can be a function that takes requirement increases into account
     resource: "Creatures", // Name of prestige currency
     baseResource: "Green Mana", // Name of resource prestige is based on
-    baseAmount() {return new Decimal(0)}, // Get the current amount of baseResource
+    baseAmount() {player.green.click}, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
     clickables: {
@@ -24,10 +24,10 @@ addLayer("green", {
         display() {
           return "Generate 1 Green Mana"
         },
-        clickableEffect() {
-          player.green.baseAmount = player.green.baseAmount.add(1)
-          player.points = player.points.add(1)
-          return player.green.baseAmount
+        onClick(){
+          let click = new Decimal(0)
+          click = click.add(1)
+          return click
         }
       }
     },
