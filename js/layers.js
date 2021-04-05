@@ -38,10 +38,6 @@ addLayer("green", {
         description: "Generate 1 Green Mana per second",
         cost() {return new Decimal(1)},
         unlocked() {return player.green.unlocked},
-        effect() {
-          eff = new Decimal(1)
-          return eff
-        }
       },
       12: {
         title: "Llanowar Tribe",
@@ -49,9 +45,6 @@ addLayer("green", {
         description: "Generate 3 Green Mana per second",
         cost() {return new Decimal(10)},
         unlocked() {return hasUpgrade("green", 11)},
-        effect() {
-          eff = new Decimal(3)
-        }
       },
       13: {
         title: "Elvish Archdruid",
