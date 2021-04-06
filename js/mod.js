@@ -44,7 +44,7 @@ function getPointGen() {
 		if(hasUpgrade("green", 12))gain.add(1)
 		if(hasUpgrade("green", 13))gain.add(3)
 
-		else gain = gain.add(1)
+		else gain = new Decimal(1)
 		return gain
 	}
 }
