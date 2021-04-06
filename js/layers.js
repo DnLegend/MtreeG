@@ -11,7 +11,7 @@ addLayer("green", {
     resource: "Creatures", // Name of prestige currency
     baseResource: "Green Mana", // Name of resource prestige is based on
     baseAmount() {
-        return player.green.baseAmount = player.green.baseAmount.add(1)
+        return new Decimal(1)
     }, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
