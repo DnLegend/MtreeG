@@ -13,41 +13,31 @@ addLayer("green", {
     baseAmount: new Decimal(0), // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     exponent: 0.5, // Prestige currency exponent
-    clickables: {
-      rows: 1,
-      cols: 1,
-      11: {
-        title: "Play a Forest",
-        description: "Generate 1 Green Mana",
-        unlocked: true,
-        canClick: true,
-        display() {
-          return "Generate 1 Green Mana"
-        },
-        clickableEffect(){
-          gain = gain.add(1)
-          return gain
-        }
-      }
-    },
     upgrades: {
       rows: 2,
       cols: 5,
       11: {
-        title: "Llanowar Elves",
-        type: "Elf",
+        title: "Play a Forest",
+        type: "Land",
         description: "Generate 1 Green Mana per second",
-        cost() {return new Decimal(1)},
+        cost: new Decimal(1),
         unlocked() {return player.green.unlocked},
       },
       12: {
+        title: "Llanowar Elves",
+        type: "Land",
+        description: "Generate 1 Green Mana per second",
+        cost() {return new Decimal(10)},
+        unlocked() {return player.green.unlocked},
+      },
+      13: {
         title: "Llanowar Tribe",
         type: "Elf",
         description: "Generate 3 Green Mana per second",
-        cost() {return new Decimal(10)},
+        cost() {return new Decimal(30)},
         unlocked() {return hasUpgrade("green", 11)},
       },
-      13: {
+      14: {
         title: "Elvish Archdruid",
         type: "Elf",
         description: "Double the effect of all Elves",
