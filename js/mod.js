@@ -41,7 +41,7 @@ function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
 
-	let gain = player.green.baseAmount
+	let gain = player.white.baseAmount + player.green.baseAmount + player.blue.baseAmount + player.red.baseAmount + player.black.baseAmount
 	//if(hasUpgrade("green", 11))gain = gain.add(1)
 	//if(hasUpgrade("green", 12))gain = gain.add(1)
 	//if(hasUpgrade("green", 13))gain = gain.add(3)
