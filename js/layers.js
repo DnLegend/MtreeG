@@ -25,8 +25,8 @@ addLayer("green", {
           return "Generate 1 Green Mana"
         },
         clickableEffect(){
-          player.green.baseAmount = player.green.baseAmount.add(1)
-          return player.green.baseAmount
+          player.green.gain = player.gain.add(1)
+          return player.gain
         }
       }
     },
