@@ -41,7 +41,10 @@ function getPointGen() {
 	if(!canGenPoints()){
 		let gain = new Decimal(0)
 		if(hasUpgrade("green", 11))gain.add(1)
-		if(hasUpgrade("green", 11))gain.add(3)
+		if(hasUpgrade("green", 12))gain.add(1)
+		if(hasUpgrade("green", 13))gain.add(3)
+
+		else gain = gain.add(1)
 		return gain
 	}
 }
