@@ -1,6 +1,6 @@
 addLayer("green", {
     name: "Creatures", // This is optional, only used in a few places, If absent it just uses the layer id.
-    symbol: "P", // This appears on the layer's node. Default is the id with the first letter capitalized
+    symbol: "G", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     startData() { return {
         unlocked: true,
@@ -24,7 +24,7 @@ addLayer("green", {
         display() {
           return "Generate 1 Green Mana"
         },
-        onClick(){
+        clickableEffect(){
           player.green.baseAmount = player.green.baseAmount.add(1)
           return player.green.baseAmount
         }
