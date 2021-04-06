@@ -8,7 +8,10 @@ addLayer("white", {
   	  points: new Decimal(0),
     }},
     color: "#4BDC13",
-    requires: new Decimal(5), // Can be a function that takes requirement increases into account
+    requires(){
+      let req = new Decimal(1)
+      req = 10^player.green.points
+    }, // Can be a function that takes requirement increases into account
     resource: "Creatures", // Name of prestige currency
     baseResource: "White Mana", // Name of resource prestige is based on
     baseAmount() {
