@@ -10,7 +10,7 @@ addLayer("white", {
     color: "#4BDC13",
     requires(){
       let req = new Decimal(1)
-      req = 5^(player.green.points)
+      req = 5^(player.white.points)
       return req
     }, // Can be a function that takes requirement increases into account
     resource: "Life Gained", // Name of prestige currency
