@@ -1,5 +1,5 @@
 addLayer("white", {
-    name: "Creatures", // This is optional, only used in a few places, If absent it just uses the layer id.
+    name: "Life Gained", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "W", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 0, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     row: 0,
@@ -24,11 +24,11 @@ addLayer("white", {
     rows: 2,
     cols: 5,
     11: {
-      title: "Play a Forest",
+      title: "Play a Plains",
       type: "Land",
-      description: "Generate 1 Green Mana per second",
+      description: "Generate 1 White Mana per second",
       cost: new Decimal(1),
-      unlocked() {return player.green.unlocked},
+      unlocked() {return player.white.unlocked},
     },
   },
   layerShown(){return true}
@@ -101,7 +101,7 @@ addLayer("empty", {
   layerShown: false
 }),
 addLayer("blue", {
-    name: "Creatures", // This is optional, only used in a few places, If absent it just uses the layer id.
+    name: "Cards Drawn", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "U", // This appears on the layer's node. Default is the id with the first letter capitalized
     position: 2, // Horizontal position within a row. By default it uses the layer id and sorts in alphabetical order
     row: 1,
@@ -111,7 +111,7 @@ addLayer("blue", {
     }},
     color: "#4BDC13",
     requires: new Decimal(5), // Can be a function that takes requirement increases into account
-    resource: "Creatures", // Name of prestige currency
+    resource: "Cards Drawn", // Name of prestige currency
     baseResource: "Blue Mana", // Name of resource prestige is based on
     baseAmount() {
         return new Decimal(1)
@@ -153,9 +153,9 @@ addLayer("red", {
           rows: 2,
           cols: 5,
           11: {
-            title: "Play a Forest",
+            title: "Play a Mountain",
             type: "Land",
-            description: "Generate 1 Green Mana per second",
+            description: "Generate 1 Red Mana per second",
             cost: new Decimal(1),
             unlocked() {return player.green.unlocked},
     },
@@ -184,9 +184,9 @@ addLayer("black", {
       rows: 2,
       cols: 5,
       11: {
-        title: "Play a Forest",
+        title: "Play a Swamp",
         type: "Land",
-        description: "Generate 1 Green Mana per second",
+        description: "Generate 1 Black Mana per second",
         cost: new Decimal(1),
         unlocked() {return player.green.unlocked},
       },
