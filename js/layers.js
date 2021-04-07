@@ -12,7 +12,7 @@ addLayer("white", {
       let req = new Decimal(1)
       req = 10^player.green.points
     }, // Can be a function that takes requirement increases into account
-    resource: "Creatures", // Name of prestige currency
+    resource: "Life Gained", // Name of prestige currency
     baseResource: "White Mana", // Name of resource prestige is based on
     baseAmount() {
       return new Decimal(1)
@@ -95,7 +95,7 @@ addLayer("green", {
     ],
     layerShown(){return true}
 }),
-addLayer("empty"){
+addLayer("empty", {
   position: 1,
   row: 1,
   layerShown: false
