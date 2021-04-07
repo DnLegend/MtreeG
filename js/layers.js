@@ -99,7 +99,7 @@ addLayer("empty", {
   position: 1,
   row: 1,
   layerShown: false
-},
+}),
 addLayer("blue", {
     name: "Creatures", // This is optional, only used in a few places, If absent it just uses the layer id.
     symbol: "U", // This appears on the layer's node. Default is the id with the first letter capitalized
