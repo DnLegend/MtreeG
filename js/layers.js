@@ -11,6 +11,7 @@ addLayer("white", {
     requires(){
       let req = new Decimal(1)
       req = 10^player.green.points
+      return req
     }, // Can be a function that takes requirement increases into account
     resource: "Life Gained", // Name of prestige currency
     baseResource: "White Mana", // Name of resource prestige is based on
@@ -89,7 +90,6 @@ addLayer("green", {
     gainExp() { // Calculate the exponent on main currency from bonuses
         return new Decimal(1)
     },
-    row: 0, // Row the layer is in on the tree (0 is the first row)
     hotkeys: [
         {key: "p", description: "P: Reset for prestige points", onPress(){if (canReset(this.layer)) doReset(this.layer)}},
     ],
