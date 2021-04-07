@@ -122,11 +122,11 @@ addLayer("blue", {
       rows: 2,
       cols: 5,
       11: {
-        title: "Play a Forest",
+        title: "Play an Island",
         type: "Land",
-        description: "Generate 1 Green Mana per second",
+        description: "Generate 1 Blue Mana per second",
         cost: new Decimal(1),
-        unlocked() {return player.green.unlocked},
+        unlocked() {return player.blue.unlocked},
       },
     },
     layerShown(){return true}
@@ -157,7 +157,7 @@ addLayer("red", {
             type: "Land",
             description: "Generate 1 Red Mana per second",
             cost: new Decimal(1),
-            unlocked() {return player.green.unlocked},
+            unlocked() {return player.red.unlocked},
     },
   },
   layerShown(){return true}
@@ -188,7 +188,7 @@ addLayer("black", {
         type: "Land",
         description: "Generate 1 Black Mana per second",
         cost: new Decimal(1),
-        unlocked() {return player.green.unlocked},
+        unlocked() {return player.black.unlocked},
       },
     },
     layerShown(){return true}
