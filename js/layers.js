@@ -9,17 +9,15 @@ addLayer("white", {
     }},
     color: "#4BDC13",
     requires(){
-      let req = new Decimal(1)
-      req = 5^(player.white.points)
+      let req = new Number(5)**(player.white.points)
       return req
     }, // Can be a function that takes requirement increases into account
     resource: "Life Gained", // Name of prestige currency
     baseResource: "White Mana", // Name of resource prestige is based on
-    baseAmount() {
-      return new Decimal(1)
+    baseAmount(){
+      return player.points
     }, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
-    exponent: 2, // Prestige currency exponent
     upgrades: {
     rows: 2,
     cols: 5,
@@ -29,6 +27,10 @@ addLayer("white", {
       description: "Generate 1 White Mana per second",
       cost: new Decimal(1),
       unlocked() {return player.white.unlocked},
+      effect(){
+        let eff = player.points.add(1)
+        return eff
+      },
     },
   },
   layerShown(){return true}
