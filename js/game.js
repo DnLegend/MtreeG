@@ -218,7 +218,7 @@ function doReset(layer, force=false) {
 	}
 
 	prevOnReset = {...player} //Deep Copy
-	player.points = player.white.baseAmount + player.green.baseAmount + player.blue.baseAmount + player.red.baseAmount + player.black.baseAmount
+	player.points = (row == 0 ? new Decimal(0) : getStartPoints())
 
 	for (let x = row; x >= 0; x--) rowReset(x, layer)
 	rowReset("side", layer)
