@@ -15,7 +15,8 @@ addLayer("white", {
     resource: "Life Gained", // Name of prestige currency
     baseResource: "White Mana", // Name of resource prestige is based on
     baseAmount(){
-      return player.points
+      let ret = new Decimal(1)
+      return ret
     }, // Get the current amount of baseResource
     type: "normal", // normal: cost to gain currency depends on amount gained. static: cost depends on how much you already have
     upgrades: {
@@ -28,7 +29,7 @@ addLayer("white", {
       cost: new Decimal(1),
       unlocked() {return player.white.unlocked},
       effect(){
-        let eff = player.points.add(1)
+        let eff = player.white.baseAmount
         return eff
       },
     },
