@@ -28,9 +28,7 @@ let winText = `Congratulations! You have reached the end and beaten this game, b
 var doNotCallTheseFunctionsEveryTick = ["blowUpEverything"]
 
 function getStartPoints(){
-  let start = new Decimal(0)
-	start = player.white.baseAmount + player.green.baseAmount + player.blue.baseAmount + player.red.baseAmount + player.black.baseAmount
-	return start
+  return new Decimal(0)
 }
 
 // Determines if it should show points/sec
@@ -42,12 +40,12 @@ function canGenPoints(){
 function getPointGen() {
 	if(!canGenPoints())
 		return new Decimal(0)
-	if(hasUpgrade("white", 11)) player.points = player.points.add(1)
-	//if(hasUpgrade("green", 11))gain = gain.add(1)
-	//if(hasUpgrade("green", 12))gain = gain.add(1)
-	//if(hasUpgrade("green", 13))gain = gain.add(3)
-	return player.points
+	//if(hasUpgrade("white", 11)) player.points = player.points.add(1)
+	let ret = player.white.baseAmount + player.green.baseAmount + player.blue.baseAmount + player.red.baseAmount + player.black.baseAmount
+	return ret
 }
+
+
 
 // You can add non-layer related variables that should to into "player" and be saved here, along with default values
 function addedPlayerData() { return {
