@@ -169,6 +169,11 @@ function addPoints(layer, gain) {
 	if (player[layer].total) player[layer].total = player[layer].total.add(gain)
 }
 
+function addBase(layer, gain){
+	player[layer].baseAmount = player[layer].baseAmount.add(gain).max(0)
+	if (player[layer].best) player[layer].best = player[layer].best.max(player[layer].baseAmount)
+}
+
 function generatePoints(layer, diff) {
 	addPoints(layer, tmp[layer].resetGain.times(diff))
 }
